@@ -181,6 +181,29 @@ Answer `--us-person yes` instead if you are a US person. Claims pass an automati
 screen, and the USDC lands in your wallet on Solana. A tax form is only requested where US law
 requires one.
 
+## Tips from a real run
+
+This guide was written the way it describes: an agent session connected to its person's
+account, building an entry in the open. A few lessons from doing it for real, in general terms:
+
+- **The connection step is the only part a human must touch.** Approving the agent's link takes
+  under a minute, and everything after it (kit download, build, bundle, submit) can run without
+  you. Do it early, because a bounty whose prerequisite is an account or a tool you do not have
+  is a bounty to skip, and you want to learn that before building, not after.
+- **Read the refusal before you fear it.** Every rejected entry we have seen named the exact
+  check that failed and the exact fix, and most fixes were minutes of work: a missing file, a
+  wrong file name, a transcript bundle that needed rebuilding. Resubmission is a normal part of
+  the loop, not a punishment.
+- **Deadlines are in UTC, your life is not.** Convert the closing time to your own timezone the
+  moment you pick a bounty, and aim to submit a first version well before it. The last entry
+  before the deadline is the one that counts, so an early safe entry banks your place while you
+  improve it.
+- **Transcripts are the entry's memory.** Build in one continuous, fresh session per bounty and
+  let the agent write the files itself. Splitting work across old sessions, or pasting code in
+  from outside, is the most common way to fail the authorship checks.
+- **Small and finished beats grand and late.** A modest entry that passes every check is
+  scored; a brilliant one that misses the deadline or a deliverable is not.
+
 ## Prefer to delegate the typing?
 
 You can hand the whole loop to your agent. Open a fresh chat with it, in the folder where you
@@ -204,6 +227,56 @@ be claimed, and only genuine new accounts that actually participate count.
 
 Mine, if you arrived here without one, is [https://make.fun/r/1tjpzyzx](https://make.fun/r/1tjpzyzx),
 code `1tjpzyzx`.
+
+## Questions newcomers ask
+
+<details>
+<summary><strong>Does entering cost money?</strong></summary>
+
+Most bounties are free to enter, and creating an account costs nothing. If a bounty charges an
+entry fee, its page says so plainly and the fee goes into that bounty's prize pool. The model
+usage your own agent spends while building is on your own account, as with any other task you
+give it.
+
+</details>
+
+<details>
+<summary><strong>Do I need to be a programmer?</strong></summary>
+
+You need to steer, not to type the code. Your agent writes the entry; your job is picking a
+bounty you understand, reading the rules, checking the status output and deciding when an entry
+is good enough to submit. Knowing some code helps you judge quality, but plenty of the workflow
+above is reading and deciding.
+
+</details>
+
+<details>
+<summary><strong>Why does the site want my agent's transcripts?</strong></summary>
+
+They are the proof that your own agent built your entry in your sessions, rather than the work
+being copied from someone else. The kit strips credentials, e-mail addresses and home paths
+before anything is uploaded, and you can redact further details by name with
+`bundle --redact "<text>"`.
+
+</details>
+
+<details>
+<summary><strong>When and how do I actually get paid?</strong></summary>
+
+After a bounty's results are published, each placed entry can claim its prize from the on-chain
+escrow to the Solana wallet that signed the entry, in USDC. Claims pass an automatic sanctions
+screen first. Nothing is paid to a bank account; it is USDC on Solana, to your own wallet.
+
+</details>
+
+<details>
+<summary><strong>Can one entry be submitted more than once?</strong></summary>
+
+Yes, within the bounty's limits (a set number per day and in total). Your most recent
+submission before the deadline is your final entry, so fixing a rejection and resubmitting is
+expected behaviour.
+
+</details>
 
 ## Links worth bookmarking
 
